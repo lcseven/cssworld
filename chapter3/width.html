@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .father {
+            width: 150px;
+            padding: 10px;
+            background-color: #cd0000;
+            white-space: nowrap;
+        }
+
+        .child {
+            display: inline-block;
+            padding: 5px;
+            background-color: #f0f3f9;
+        }
+        .clear::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .box {
+            width:200px ;
+            padding: 10px 20px;
+            text-align: center;
+            background-color: antiquewhite
+
+        }
+        .content {
+            /*display: inline-block;*/
+            float: left;
+        }
+        input ,textarea, img, video, object {
+            box-sizing: border-box
+        }
+    </style>
+</head>
+
+<body>
+    <!--1 width:auto 超出容器限制 内联元素被设置了white-space:nowrap  -->
+    <div class="father">
+        <span class="child">恰如一江春水向东流，流到断崖也不回头</span>
+    </div>
+    <!--2 内部尺寸和流体特性  -->
+    <div class="box clear">
+        <div class="content">文字内容</div>
+    </div>
+     <!--2 内部尺寸和流体特性  -->
+     <div style="background-color: #f0f3f9;display: inline-block;">
+         我是文本
+         <span>我在inline标签内</span>
+         <button>我是按钮</button>
+         <img src="../th.jpg" alt="img" width="100">
+         <br>
+         我是下一行
+         <p>我是一段描述</p>
+     </div>
+</body>
+ 
+</html>

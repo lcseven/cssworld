@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>clearfix</title>
+    <style>
+        .father {
+            padding: 10px;
+            background-color: #e1e1e1;
+        }
+        .son {
+            float: left;
+            width: 150px;
+            height: 150px;
+            background-color: #08c;
+            margin-right: 10px;
+        }
+        .son1 {
+            clear: both;
+        }
+    </style>  
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+        <div class="son"></div>
+        <div class="son"></div>
+        <div class="son1"></div>
+    </div>
+</body>
+</html>

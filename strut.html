@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>幽灵空白节点</title>
+</head>
+<style>
+    .container {
+        display: table;
+        table-layout:fixed;
+        width: 600px;
+        height: 100px;
+        background-color: #00a8f3;
+    }
+    .child {
+        display: table-cell;
+
+    }
+</style>
+<body>
+<div class="container">
+    <div class="child" >wqerew</div>
+    <div class="child" >2</div>
+    <div class="child" >23</div>
+</div>
+</body>
+</html>
