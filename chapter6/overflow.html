@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>overflow</title>
+    <style>
+        body {
+            height: 1200px;
+        }
+        .box {
+            height:500px;
+            border:1px solid #bbb;
+            overflow: hidden;
+        }
+        .content {
+            height: 800px;
+            background-color: #eee;
+        }
+        .input-a {
+            position: absolute;
+            top:1150px;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- overflow 与锚点定位 -->
+    <div class="box">
+        <div class="content"></div>
+        <h2 id="title">底部标题</div>
+    </div>
+    <p><a href="#title">点击测试</a></p>
+    <input class="input-a" type="text">
+</body>
+</html>

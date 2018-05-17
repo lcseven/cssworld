@@ -84,6 +84,51 @@
             line-height: 0;
             color: #333;
         }
+        .bg {
+           padding: 15px  30px;
+           background-color: #efefef;
+        }
+       
+        .ul-wrapper {
+            padding-left: 0;
+            margin-right: -15px;
+        }
+        .ul-wrapper::after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+         .li-item {
+             float: left;
+             width:25% ;
+             box-sizing: border-box;
+             border-right: 15px solid transparent;
+             list-style-type:none;
+             
+         }
+         .color {
+             height: 150px;
+             background-color: #8BC34A;
+             border-radius: 10px;
+         }
+         .pos-rlt {
+             position: relative;
+             width: 500px;
+             height: 300px;
+             background-color: #08c;
+             margin-top: 20px;
+         }
+         .pos-abt {
+             position: absolute;
+             top:0;
+             left:0;
+             right:0;
+             bottom:0;
+             width:200px;
+             height:100px;
+             background-color: #fff;
+             margin: auto;
+         }
     </style>
 </head>
 
@@ -116,6 +161,27 @@
             <span class="text">资料下载</span>
         </div>
     </div>
+    <!-- margin 等分布局 -->
+    <div class="bg">
+        <ul class="ul-wrapper">
+            <li class="li-item">
+               <div class="color"></div>
+            </li>
+            <li class="li-item">
+                <div class="color"></div>
+            </li>
+            <li class="li-item">
+                <div class="color"></div>
+            </li>
+            <li class="li-item">
+                <div class="color"></div>
+            </li>
+        </ul>
+    </div>
+<!-- margin:auto 居中 -->
+<div class="pos-rlt">
+    <div class="pos-abt"></div>
+</div>
 </body>
 
 </html>

@@ -158,7 +158,174 @@ padding百分比值无论是水平方向还是垂直方向均是相对于宽度�
 </div>
 ```
 
+
 # 4.4功勋卓越的border属性
 ## 4.4.3 border-color和color
 
-border-color 有一个很重要也很实用的特性，就是“border-color默认颜色就是color色值”
+border-color 有一个很重要也很实用的特性，就是“border-color默认颜色就是color色值”。根据这个特性可以做个简单的边框hover变色实例。
+
+``` html
+<style>
+    .border {
+        position: relative; 
+        width: 80px;
+        height:80px;
+        border:2px dashed;
+        color: #e3e3e3;
+    }
+    .border:hover {
+        color:red;
+    }
+    .border::after {
+        position: absolute;
+        display: block;
+        content: '';
+        width:40px;
+        height: 40px;
+        border-top:6px solid;
+        top:40px;
+        left:40px;
+        margin-top: -3px;
+        margin-left: -20px;
+    }
+    .border::before {
+        position: absolute;
+        display: block;
+        content: '';
+        width:40px;
+        height: 40px;
+        top:40px;
+        left:40px;
+        margin-top: -20px;
+        margin-left: -3px;
+        border-left:6px solid;
+    }
+</style>
+<body>
+    <!-- border属性缺省 -->
+    <div class="border">
+
+    </div>
+</body>
+```
+
+## 例子（利用border和margin实现等分布局）
+```html
+<style>
+.bg {
+    padding: 15px  30px;
+    background-color: #e1e1e1;
+}
+
+.ul-wrapper {
+    padding-left: 0;
+    margin-right: -15px;
+}
+.ul-wrapper::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+.li-item {
+    float: left;
+    width:25% ;
+    box-sizing: border-box;
+    border-right: 15px solid transparent;
+    list-style-type:none;
+}
+.color {
+    height: 150px;
+    background-color: #08c;
+}
+</style>
+ <!-- margin 等分布局 -->
+    <div class="bg">
+        <p >管理中心</p>
+        <ul class="ul-wrapper">
+            <li class="li-item">
+               <div class="color"></div>
+            </li>
+            <li class="li-item">
+                <div class="color"></div>
+            </li>
+            <li class="li-item">
+                <div class="color"></div>
+            </li>
+            <li class="li-item">
+                <div class="color"></div>
+            </li>
+        </ul>
+    </div>
+```
+## 两种等高布局
+ *  border
+ *  margin + padding
+
+ ```html
+ <style>
+.border-box {
+    margin: 10px 0;
+    border-left:150px solid #c7c7c7;
+    background-color: #f1f1f1;
+    
+}
+
+/* 此处不能用overflow:hidden清除浮动否则左浮动的导航列表元素就会被隐藏掉 */
+.border-box::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+.border-box > nav {
+    width: 150px;
+    margin-left: -150px;
+    float: left;
+    text-align: center;
+    
+}
+ </style>
+ <!-- border等高布局-->
+<div class="border-box">
+    <nav>
+        <h3>导航1</h3>
+        <h3>导航2</h3>
+    </nav>
+    <section>
+    <h5>模块1</h5>
+    <h5>模块2</h5>
+    <h5>模块3</h5>
+    </section>
+</div>
+
+ ```
+
+ ```html
+ <style>
+.margin-box {
+    overflow: hidden;
+}
+.column-left ,.column-right {
+    width: 50%;
+    float: left;
+    padding-bottom: 9999px;
+    margin-bottom: -9999px;
+
+}
+.column-left {
+    background-color: #c7c7c7;
+}
+.column-right {
+    background-color: #f1f1f1;
+}
+</style>
+ <!-- margin + padding 等高布局 -->
+<div class="margin-box">
+    <div class="column-left">
+        <h3>导航1</h3>
+        <h3>导航2</h3>
+    </div>
+    <div class="column-right">
+        <h4>模块1</h3>
+    </div>
+</div>
+ ```

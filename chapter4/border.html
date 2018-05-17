@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>border</title>
+    <style>
+        .border {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 10px 0;
+            border: 2px dashed;
+            color: #e3e3e3;
+
+        }
+
+        .border:hover {
+            color: red;
+        }
+
+        .border::after {
+            position: absolute;
+            display: block;
+            content: '';
+            width: 40px;
+            height: 40px;
+            border-top: 6px solid;
+            top: 40px;
+            left: 40px;
+            margin-top: -3px;
+            margin-left: -20px;
+        }
+
+        .border::before {
+            position: absolute;
+            display: block;
+            content: '';
+            width: 40px;
+            height: 40px;
+            top: 40px;
+            left: 40px;
+            margin-top: -20px;
+            margin-left: -3px;
+            border-left: 6px solid;
+        }
+
+        .border-2 {
+            margin: 10px 0;
+            width: 0;
+            border-width: 50px 25px;
+            border-style: solid;
+            border-color: rgb(255, 112, 112) rgb(142, 245, 190) rgb(240, 147, 232) rgb(129, 195, 228);
+        }
+
+        .border-box {
+            margin: 10px 0;
+            border-left: 150px solid #c7c7c7;
+            background-color: #f1f1f1;
+
+        }
+
+        /* 此处不能用overflow:hidden清除浮动否则左浮动的导航列表元素就会被隐藏掉 */
+
+        .border-box::after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+
+        .border-box>nav {
+            width: 150px;
+            margin-left: -150px;
+            float: left;
+            text-align: center;
+
+        }
+
+        .margin-box {
+            overflow: hidden;
+        }
+
+        .column-left,
+        .column-right {
+            width: 50%;
+            float: left;
+            padding-bottom: 9999px;
+            margin-bottom: -9999px;
+
+        }
+
+        .column-left {
+            background-color: #c7c7c7;
+        }
+
+        .column-right {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- border属性缺省 -->
+    <div class="border">
+
+    </div>
+
+    <!-- border特殊三角形 -->
+    <div class="border-2">
+    </div>
+    <!-- border等高布局-->
+    <div class="border-box">
+        <nav>
+            <h3>导航1</h3>
+            <h3>导航2</h3>
+        </nav>
+        <section>
+            <h5>模块1</h5>
+            <h5>模块2</h5>
+            <h5>模块3</h5>
+        </section>
+    </div>
+
+    <!-- margin + padding 等高布局 -->
+    <div class="margin-box">
+        <div class="column-left">
+            <h3>导航1</h3>
+            <h3>导航2</h3>
+        </div>
+        <div class="column-right">
+            <h4>模块1</h3>
+        </div>
+    </div>
+</body>
+
+</html>
