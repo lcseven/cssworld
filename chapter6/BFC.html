@@ -7,26 +7,41 @@
     <title>BFC结界</title>
     <style>
         .father {
-            width: 200px;
+            /* width: 200px; */
             border:1px solid #666;
+        }
+        .father:after {
+            display: block;
+            content: '';
+            clear: both;
         }
         .flt {
             float: left;
         }
-        .flr {
-            float:right;
-        }
+    
         .bfc {
             overflow: hidden;
+            /* font-size: 0 */
+        }
+        .i-b {
+            float: left;
+            width: 50%;
+            height: 50px;
+            background-color: aqua
+        }
+        .b1 {
+            background-color: blueviolet
         }
     </style>
 </head>
 <body>
     <div class="father">
-        <!-- <img  class="flt" src="../th.jpg"  width="60"alt="1"> -->
-        <span class="flt">dasdfe</span>
-        <span class="flr">daads </span>
-        <div class="bfc">假装这里有若干个文字。假装这里有若干个文字。假装这里有若干个文字。</div>
+        <img  class="flt" src="../th.jpg"  width="60"alt="1">
+        <div class="bfc">
+            <span class="i-b b1">1</span>
+            <span class="i-b">2</span>
+            
+        </div>
     </div>
 </body>
 </html>
